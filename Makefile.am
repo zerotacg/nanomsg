@@ -35,6 +35,7 @@ nninclude_HEADERS = \
     src/inproc.h \
     src/ipc.h \
     src/tcp.h \
+    src/tcpmux.h \
     src/pair.h \
     src/pubsub.h \
     src/reqrep.h \
@@ -275,11 +276,18 @@ TRANSPORTS_TCP = \
     src/transports/tcp/tcp.h \
     src/transports/tcp/tcp.c
 
+TRANSPORTS_TCPMUX = \
+    src/transports/tcpmux/ctcpmux.h \
+    src/transports/tcpmux/ctcpmux.c \
+    src/transports/tcpmux/tcpmux.h \
+    src/transports/tcpmux/tcpmux.c
+
 NANOMSG_TRANSPORTS = \
     $(TRANSPORTS_UTILS) \
     $(TRANSPORTS_INPROC) \
     $(TRANSPORTS_IPC) \
-    $(TRANSPORTS_TCP)
+    $(TRANSPORTS_TCP) \
+    $(TRANSPORTS_TCPMUX)
 
 libnanomsg_la_SOURCES = \
     src/transport.h \

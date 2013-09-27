@@ -44,6 +44,7 @@
 #include "../transports/inproc/inproc.h"
 #include "../transports/ipc/ipc.h"
 #include "../transports/tcp/tcp.h"
+#include "../transports/tcpmux/tcpmux.h"
 
 #include "../protocols/pair/pair.h"
 #include "../protocols/pair/xpair.h"
@@ -192,6 +193,7 @@ static void nn_global_init (void)
     nn_global_add_transport (nn_ipc);
 #endif
     nn_global_add_transport (nn_tcp);
+    nn_global_add_transport (nn_tcpmux);
 
     /*  Plug in individual socktypes. */
     nn_global_add_socktype (nn_pair_socktype);

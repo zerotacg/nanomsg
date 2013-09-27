@@ -32,6 +32,7 @@ set (NN_SOURCES
     inproc.h
     ipc.h
     tcp.h
+    tcpmux.h
     pair.h
     pubsub.h
     reqrep.h
@@ -239,6 +240,11 @@ set (NN_SOURCES
     transports/tcp/stcp.c
     transports/tcp/tcp.h
     transports/tcp/tcp.c
+
+    transports/tcpmux/ctcpmux.h
+    transports/tcpmux/ctcpmux.c
+    transports/tcpmux/tcpmux.h
+    transports/tcpmux/tcpmux.c
 )
 
 add_library (nanomsg SHARED ${NN_SOURCES})
