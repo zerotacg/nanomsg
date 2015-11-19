@@ -3,15 +3,17 @@ version: 1.0.{build}
 environment:
   matrix:
     - CMAKE_GENERATOR: MinGW Makefiles
-      MINGW_VERSION: mingw482_32
+      MINGW_VERSION: C:\Qt\Tools\mingw482_32
     - CMAKE_GENERATOR: MinGW Makefiles
-      MINGW_VERSION: mingw491_32
+      MINGW_VERSION: C:\Qt\Tools\mingw491_32
     - CMAKE_GENERATOR: MinGW Makefiles
-      MINGW_VERSION: mingw492_32
+      MINGW_VERSION: C:\Qt\Tools\mingw492_32
+    - CMAKE_GENERATOR: MinGW Makefiles
+      MINGW_VERSION: C:\MinGW
 
 before_build:
   - set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
-  - set PATH=C:\Qt\Tools\%MINGW_VERSION%\bin;%PATH%
+  - set PATH=%MINGW_VERSION%\bin;%PATH%
   - mkdir build
   - cmake --version
 
