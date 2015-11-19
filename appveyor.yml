@@ -1,14 +1,17 @@
 version: 1.0.{build}
 
 environment:
-  matrix:
-    - GENERATOR: MinGW Makefiles
+    matrix:
+        - CMAKE_GENERATOR: MinGW Makefiles
 
 install:
- - cinst mingw
+    - cinst mingw
+
+before_build:
+    - set PATH=%PATH:C:\Program Files (x86)\Git\bin;=%
+    - set PATH=C:\tools\mingw64\bin;%PATH%
+    - mkdir build
 
 build_script:
- - ps: mkdir build
- - ps: cd build
- - ps: cmake -G "$env:GENERATOR" ..
- - ps: cmake --build .
+    - cmake -G "%CMAKE_GENERATOR%" -H. -Bbuild
+    - cmake --build build
