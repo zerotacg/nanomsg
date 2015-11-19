@@ -8,8 +8,7 @@ install:
  - cinst mingw
 
 build_script:
-- ps: >-
-    mkdir build
-    cd build
-    cmake -G "%GENERATOR%" ..
-    cmake --build .
+ - ps: mkdir build
+ - ps: cd build
+ - ps: cmake -G "%GENERATOR%" ..
+ - ps: cmake --build .
